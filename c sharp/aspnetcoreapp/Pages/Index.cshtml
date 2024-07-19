@@ -1,0 +1,123 @@
+@page
+@model AboutModel
+@{
+    ViewData["Title"] = "Scientific Calculator";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            width: calc(50% - 10px);
+            padding: 12px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: calc(33% - 10px);
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px;
+            margin: 10px 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #495057;
+            text-align: center;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: #dc3545;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scientific Calculator</h1>
+        
+        <form method="POST">
+            <input type="text" placeholder="Enter Num1" name="num1" />
+            <input type="text" placeholder="Enter Num2" name="num2" />
+            <input type="submit" value="ADD" name="ADD" />
+            <input type="submit" value="SQR" name="SQR" />
+            <input type="submit" value="POW" name="POW" />
+            <input type="submit" value="Multiply" name="Multiply" />
+            <input type="submit" value="Subtraction" name="Subtraction" />
+            <input type="submit" value="Division" name="Division" />
+            <input type="submit" value="Cube" name="Cube" />
+        </form>
+
+        <p>@ViewData["sum"]</p>
+        <p>@ViewData["squares"]</p>
+        <p>@ViewData["power"]</p>
+        <p>@ViewData["multiply"]</p>
+        <p>@ViewData["subtrct"]</p>
+        <p>@ViewData["division"]</p>
+        <p>@ViewData["cube"]</p>
+        <p class="error">@ViewData["error"]</p>
+
+        <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+</body>
+</html>
